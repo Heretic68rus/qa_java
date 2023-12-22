@@ -26,7 +26,8 @@ public class FelineTest {
     @Test
     public void testGetKittensReturnKittensCountIsOne() {
         Feline feline = new Feline(allFeline);
+        int expectedValue = 1;
         int returnValue = feline.getKittens();
-        Assert.assertEquals(1, returnValue);
+        Assert.assertEquals(expectedValue, returnValue);
     }
 }

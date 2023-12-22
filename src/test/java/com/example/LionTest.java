@@ -10,11 +10,10 @@ import java.util.List;
 public class LionTest {
 
     @Mock
-    Lion allFeline;
-
+    Feline feline;
     @Test
     public void testGetKittens() {
-        Lion lion = new Lion(this.allFeline);
+        Lion lion = new Lion(this.feline);
         int kittensCount = 0;
         int returnValue = lion.getKittens(kittensCount);
         Assert.assertEquals(0, returnValue);
@@ -29,7 +28,7 @@ public class LionTest {
     }
     @Test
     public void testLionThrowExeptionWithInvalidSex() {
-        Exception exception = Assert.assertThrows(Exception.class, () -> new Lion("Не определен"));
+        Exception exception = Assert.assertThrows(Exception.class, () -> new Lion("Не определен", feline));
         Assert.assertEquals("Используйте допустимые значения пола животного - самей или самка", exception.getMessage());
     }
 }
